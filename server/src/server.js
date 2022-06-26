@@ -10,8 +10,8 @@ const server = http.createServer(app)
 
 
 async function startServer() {
-  await loadPlanetData()
-  
+  const res = await loadPlanetData()
+  console.log(res)
   server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
   })
