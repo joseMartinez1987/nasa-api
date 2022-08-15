@@ -26,7 +26,7 @@ const launchesSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
-    succes: {
+    success: {
         type: Boolean,
         required: true,
         default: true
