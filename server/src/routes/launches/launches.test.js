@@ -19,7 +19,7 @@ describe("Launches API", () => {
       // expect(response.statusCode).toBe(200)
 
       const response = await request(app)
-        .get("/launches")
+        .get("/v1/launches")
         .expect("Content-Type", /json/)
         .expect(200);
     });
@@ -48,7 +48,7 @@ describe("Launches API", () => {
 
     test("It should responde with 201 created", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(completeLaunchData)
         .expect("Content-Type", /json/)
         .expect(201);
@@ -62,7 +62,7 @@ describe("Launches API", () => {
 
     test("It should catch missing requires properties", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDateWithoutData)
         .expect("Content-Type", /json/)
         .expect(400);
@@ -74,7 +74,7 @@ describe("Launches API", () => {
 
     test("It should catch incalid dates", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(launchDateWithInvalidDate)
         .expect("Content-Type", /json/)
         .expect(400);
