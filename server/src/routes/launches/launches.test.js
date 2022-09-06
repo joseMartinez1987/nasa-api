@@ -11,7 +11,7 @@ describe("Launches API", () => {
     })
     afterAll(async() => {
         await mongDisconnect()
-        loadPlanetData()
+        await loadPlanetData()
     })
 
   describe("Test GET / launches", () => {
