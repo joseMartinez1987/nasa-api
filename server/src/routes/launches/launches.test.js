@@ -8,10 +8,10 @@ describe("Launches API", () => {
   
     beforeAll(async() => {
         await mongoConnect()
+        await loadPlanetData()
     })
     afterAll(async() => {
         await mongDisconnect()
-        await loadPlanetData()
     })
 
   describe("Test GET / launches", () => {
